@@ -1,0 +1,169 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-size: 14px; }
+
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+#home {
+  background: #f5f5f5; }
+  #home #search {
+    width: 100%;
+    height: 50px;
+    background: white;
+    overflow: hidden;
+    line-height: 50px;
+    border-bottom: 1px solid #eee; }
+    #home #search .left {
+      float: left;
+      position: relative; }
+      #home #search .left input {
+        width: 310px;
+        height: 35px;
+        text-align: center;
+        border: 0;
+        background: #f5f5f5;
+        border-radius: 15px;
+        margin-left: 10px; }
+      #home #search .left span {
+        display: inline-block;
+        position: absolute;
+        top: 1px;
+        left: 80px;
+        color: #999; }
+    #home #search .right {
+      float: right;
+      margin-right: 20px;
+      color: #999; }
+      #home #search .right i {
+        font-size: 20px; }
+  #home #nav1 {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    background: white;
+    border-bottom: 1px solid #eee; }
+    #home #nav1 li {
+      float: left;
+      margin: 0px 15px; }
+    #home #nav1 li.active a {
+      color: #fe4070;
+      border-bottom: 2px solid #fe4070;
+      padding-bottom: 14px; }
+  #home #banner {
+    background: white;
+    padding: 5px 10px; }
+  #home #navul {
+    width: 100%;
+    height: 85px;
+    text-align: center;
+    background: white; }
+    #home #navul img {
+      width: 100%;
+      display: inline-block;
+      width: 60px;
+      height: 80px;
+      margin: 5px 5px; }
+  #home #coupon img {
+    width: 100%; }
+  #home #hot {
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+    #home #hot img {
+      width: 170px;
+      float: left;
+      margin-left: 12px; }
+  #home #catg {
+    overflow: hidden;
+    margin-top: 5px;
+    position: relative; }
+    #home #catg img {
+      float: left;
+      width: 123px;
+      height: 60px;
+      margin-right: 3px;
+      margin-bottom: 2px; }
+    #home #catg img:nth-of-type(3) {
+      margin-right: 0; }
+    #home #catg li {
+      width: 121px;
+      height: 60px;
+      background: white;
+      position: absolute;
+      right: 2px;
+      bottom: 2px; }
+      #home #catg li p:nth-of-type(1) {
+        margin-top: 10px;
+        font-size: 16px;
+        color: #333; }
+      #home #catg li p:nth-of-type(2) {
+        color: #999; }
+  #home #main {
+    background: white;
+    margin-top: 10px;
+    padding-bottom: 10px; }
+    #home #main li {
+      width: 100%;
+      height: 220px;
+      position: relative; }
+      #home #main li img {
+        width: 95%;
+        height: 95%; }
+      #home #main li img:nth-of-type(1) {
+        margin-top: 10px; }
+      #home #main li > div {
+        position: absolute;
+        padding-left: 10px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+        left: 9px;
+        bottom: 0px;
+        text-align: left;
+        color: white;
+        background: rgba(0, 0, 0, 0.4); }
+        #home #main li > div p:nth-of-type(1) {
+          font-size: 15px; }
+  #home #bottom {
+    margin-top: 10px;
+    background: white;
+    margin-bottom: 50px;
+    border-bottom: 5px solid #f5f5f5; }
+    #home #bottom ul {
+      text-align: center; }
+      #home #bottom ul li {
+        display: inline-block; }
+        #home #bottom ul li a {
+          border-right: 1px solid #555;
+          padding-right: 15px;
+          margin-left: 15px; }
+      #home #bottom ul li:last-child a {
+        border-right: none; }
+    #home #bottom p {
+      line-height: 50px; }
+  #home #footer {
+    width: 100%;
+    height: 50px;
+    background: white;
+    text-align: center;
+    position: fixed;
+    left: 0px;
+    bottom: 0px; }
+    #home #footer li {
+      display: inline-block;
+      color: #555;
+      font-size: 14px;
+      position: relative;
+      height: 45px;
+      padding: 0px 30px;
+      padding-top: 27px; }
+      #home #footer li i {
+        position: absolute;
+        top: 5px;
+        left: 35px;
+        font-size: 20px; }

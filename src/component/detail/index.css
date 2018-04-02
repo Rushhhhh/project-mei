@@ -1,0 +1,273 @@
+* {
+  margin: 0px;
+  padding: 0px; }
+
+li {
+  list-style: none; }
+
+body {
+  background: white; }
+
+#detail #header {
+  width: 100%;
+  height: 50px;
+  background: white;
+  position: relative; }
+  #detail #header > span:nth-of-type(1) {
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    top: 10px; }
+    #detail #header > span:nth-of-type(1) i {
+      font-size: 20px; }
+  #detail #header > span:nth-of-type(2) {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 10px; }
+    #detail #header > span:nth-of-type(2) i {
+      font-size: 20px; }
+  #detail #header > div p:nth-of-type(1) {
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: bold; }
+  #detail #header > div p:nth-of-type(2) {
+    color: red;
+    font-weight: bold; }
+
+#detail #main {
+  background: white;
+  padding-bottom: 10px; }
+  #detail #main img {
+    width: 85%;
+    border: 3px solid #eee;
+    border-top: 0; }
+  #detail #main > div {
+    margin-left: 25px;
+    text-align: left; }
+    #detail #main > div p:nth-of-type(1) {
+      font-size: 16px;
+      line-height: 30px; }
+    #detail #main > div p:nth-of-type(2) {
+      color: #999;
+      text-decoration: line-through; }
+    #detail #main > div p:nth-of-type(3) span:nth-of-type(1) {
+      font-size: 16px;
+      font-weight: bold;
+      color: red; }
+    #detail #main > div p:nth-of-type(3) span:nth-of-type(2) {
+      margin-left: 10px;
+      border: 1px solid black;
+      padding: 0px 2px; }
+    #detail #main > div p:nth-of-type(3) span:nth-of-type(3) {
+      margin-left: 10px;
+      border: 1px solid black;
+      padding: 0px 2px; }
+    #detail #main > div p:nth-of-type(4) {
+      color: #666;
+      line-height: 30px;
+      font-size: 12px; }
+
+#detail #table {
+  background: white;
+  width: 100%; }
+  #detail #table ul {
+    width: 90%;
+    border: 1px solid #ddd;
+    margin: auto; }
+    #detail #table ul li {
+      height: 60px;
+      text-indent: 5px; }
+    #detail #table ul li:nth-of-type(1) {
+      line-height: 60px;
+      text-align: left;
+      border-bottom: 1px solid #ddd; }
+      #detail #table ul li:nth-of-type(1) span:nth-of-type(2) {
+        font-weight: bold;
+        margin-left: 20px; }
+    #detail #table ul li:nth-of-type(2) {
+      text-align: left; }
+      #detail #table ul li:nth-of-type(2) > span {
+        line-height: 60px; }
+      #detail #table ul li:nth-of-type(2) > div {
+        width: 260px;
+        float: right;
+        font-size: 12px;
+        line-height: 20px;
+        margin-right: 30px;
+        margin-top: 10px; }
+        #detail #table ul li:nth-of-type(2) > div span {
+          border-right: 1px solid #000;
+          padding-right: 10px;
+          margin-left: 10px; }
+        #detail #table ul li:nth-of-type(2) > div span:last-child {
+          border: 0; }
+
+#detail #info {
+  margin-top: 20px;
+  text-align: left; }
+  #detail #info .section1 {
+    width: 90%;
+    margin: auto; }
+    #detail #info .section1 h2 {
+      font-size: 18px;
+      line-height: 50px; }
+    #detail #info .section1 img {
+      width: 90%; }
+  #detail #info .section2 {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    line-height: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px; }
+    #detail #info .section2 .left {
+      float: left;
+      color: #999;
+      width: 30%; }
+      #detail #info .section2 .left > li:nth-of-type(2) {
+        margin-top: 30px; }
+    #detail #info .section2 .right {
+      float: right;
+      width: 65%; }
+  #detail #info .section3 {
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px; }
+    #detail #info .section3 h2 {
+      font-size: 18px;
+      line-height: 50px; }
+    #detail #info .section3 img {
+      width: 90%;
+      margin: auto; }
+    #detail #info .section3 p {
+      font-size: 12px; }
+  #detail #info .section4 {
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px; }
+    #detail #info .section4 h2 {
+      font-size: 18px;
+      line-height: 50px; }
+    #detail #info .section4 p {
+      font-size: 12px; }
+  #detail #info .section5 {
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    overflow: hidden; }
+    #detail #info .section5 span:first-child {
+      font-size: 18px;
+      line-height: 30px;
+      font-weight: bold; }
+    #detail #info .section5 span:last-child {
+      float: right; }
+  #detail #info .section6 {
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    overflow: hidden; }
+    #detail #info .section6 h2 {
+      font-size: 18px;
+      line-height: 50px; }
+    #detail #info .section6 p {
+      font-size: 12px; }
+  #detail #info .message {
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    overflow: hidden; }
+    #detail #info .message h2 {
+      font-size: 18px;
+      line-height: 50px; }
+      #detail #info .message h2 span {
+        float: right;
+        font-weight: 100; }
+    #detail #info .message > div > div p:nth-of-type(1) {
+      line-height: 50px;
+      font-size: 12px; }
+    #detail #info .message > div > div p:nth-of-type(2) {
+      line-height: 30px;
+      font-size: 14px; }
+    #detail #info .message > div > div p:nth-of-type(3) {
+      line-height: 30px;
+      font-size: 12px;
+      color: #999; }
+
+#detail #hot {
+  width: 90%;
+  margin: auto;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 60px;
+  overflow: hidden;
+  margin-top: 10px;
+  text-align: left; }
+  #detail #hot h2 {
+    font-size: 18px;
+    line-height: 50px; }
+  #detail #hot li {
+    float: left;
+    width: 165px;
+    height: 290px;
+    background: white;
+    text-align: left; }
+    #detail #hot li img {
+      width: 85%; }
+    #detail #hot li > div {
+      margin-left: 10px; }
+      #detail #hot li > div > span:nth-of-type(1) {
+        font-size: 12px;
+        border: 1px solid black; }
+      #detail #hot li > div > p:nth-of-type(1) {
+        font-size: 16px;
+        font-weight: bold; }
+      #detail #hot li > div > p:nth-of-type(2) {
+        font-size: 12px; }
+      #detail #hot li > div > p:last-child span:nth-of-type(1) {
+        color: red; }
+      #detail #hot li > div > p:last-child span:nth-of-type(2) {
+        color: #999;
+        margin: 0px 5px;
+        text-decoration: line-through; }
+      #detail #hot li > div > p:last-child span:last-child {
+        color: #333;
+        margin-left: 1px; }
+
+#detail #footer {
+  width: 100%;
+  border-top: 1px solid #ccc;
+  height: 50px;
+  position: fixed;
+  bottom: 0px;
+  background: white; }
+  #detail #footer .left {
+    float: left;
+    margin-left: 20px;
+    margin-top: 5px; }
+  #detail #footer .right {
+    float: right;
+    width: 300px;
+    display: flex;
+    line-height: 50px; }
+    #detail #footer .right li {
+      flex: 1; }
+    #detail #footer .right li:first-child {
+      background: orange;
+      color: white;
+      font-size: 18px; }
+    #detail #footer .right li:last-child {
+      background: red;
+      color: white;
+      font-size: 18px; }
