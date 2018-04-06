@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd-mobile": "^2.1.8",
     "axios": "^0.18.0",
+    "express-session": "^1.15.6",
     "node-sass-chokidar": "^1.2.2",
     "react": "^16.2.0",
     "react-addons-css-transition-group": "^15.6.2",
@@ -33,6 +35,21 @@
     "/appapi": {
       "target": "http://www.mei.com",
       "host": "www.mei.com",
+      "changeOrigin": true
+    },
+    "/apiregister": {
+      "target": "http://localhost:8000",
+      "host": "localhost:8000",
+      "changeOrigin": true
+    },
+    "apilogin": {
+      "target": "http://localhost:8000",
+      "host": "localhost:8000",
+      "changeOrigin": true
+    },
+    "/apicart": {
+      "target": "http://localhost:8000",
+      "host": "localhost:8000",
       "changeOrigin": true
     }
   }

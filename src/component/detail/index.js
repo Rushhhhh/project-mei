@@ -17,7 +17,7 @@ class Detail extends React.Component{
 	render(){
 		return <div id="detail">
 			<div id="header">
-				<span><i className="iconfont icon-back"></i></span>
+				<span onClick={this.handleBackClick.bind(this)}><i className="iconfont icon-back"></i></span>
 				<div>
 					<p>{this.state.infoList.brand}</p>
 					<p>{this.state.infoList.itemPriceDto?'￥'+this.state.infoList.itemPriceDto.price:null}</p>
@@ -174,12 +174,12 @@ class Detail extends React.Component{
 			</div>
 
 			<div id="footer">
-				<div className="left">
+				<div className="left"><a href="/shopcar">
 				<i className="iconfont icon-cart"></i>
-				<p>购物车</p>
+				<p>购物车</p></a>
 				</div>
 				<ul className="right">
-					<li>加入购物车</li>
+					<li onClick={this.onCartClick.bind(this)}>加入购物车</li>
 					<li>立即购买</li>
 				</ul>
 			</div>
@@ -194,10 +194,13 @@ class Detail extends React.Component{
 		// console.log(this.props.match.params.id2)
 		axios.get(`/appapi/product/detail/v3?categoryId=${this.props.match.params.id1}&productId=${this.props.match.params.id2}&platform_code=H5&timestamp=1522563640405&summary=11c2485d8914ec9e34c71d56388a86eb`).then(res=>{
 			console.log(res.data.infos);
+			this.setState({
+				infoList:res.data.infos
+				
+			})
 
-			// console.log(res.data.infos.groupInfo.groupLists[0].shortAttribute)
 
-			setInterval(function(){
+			this.timer = setInterval(function(){
 				var nowDate = new Date();
 				var time = res.data.infos.eventEndDate-Math.floor(nowDate.getTime()/1000);
 				// console.log(time);
@@ -209,23 +212,8 @@ class Detail extends React.Component{
 				var timetext = document.getElementsByClassName("time")[0];
 				timetext.innerHTML = '距离结束'+iD+'天'+iH+'小时'+iM+'分'+iS+'秒';
 			},500)
-			
-			
-
-			// var obj = res.data.infos.groupInfo.groupLists[0].shortAttribute;
-			// var arr1 = [];
-			// var arr2 = [];
-			// var arr
-			// for(var attr in obj){
-			// 	arr1.push(attr);
-			// 	arr2.push(obj[attr])
-			// }
 
 
-			this.setState({
-				infoList:res.data.infos
-				
-			})
 
 			
 		})
@@ -235,6 +223,24 @@ class Detail extends React.Component{
 			this.setState({
 				hotList:res.data.categoryList
 			})
+		})
+	}
+
+	componentWillUnmount(){
+		clearTimeout(this.timer);
+		console.log("clear");
+	}
+	handleBackClick(){
+		this.props.history.go(-1);
+	}
+
+	onCartClick(){
+		var xx = JSON.parse(localStorage.getItem("userID"));
+		axios.post("/apicart",{
+			who:xx[0]._id,
+			info:[this.state.infoList.name,this.state.infoList.brand,this.state.infoList.price,this.state.infoList.images[0].smallImgUrl]
+		}).then(res=>{
+			console.log(res.data)
 		})
 	}
 }

@@ -1,0 +1,16 @@
+#sidebar{
+	width:50%;
+	height:90%;
+	position:fixed;
+	z-index:2;
+	right:0px;
+	top:50px;
+	ul{
+		background:white;
+		li{
+			color:#999;
+			border-bottom:1px solid #ccc;
+			padding:10px 20px;
+		}
+	}
+}

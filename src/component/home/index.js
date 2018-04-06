@@ -5,6 +5,9 @@ import axios from "axios";
 import ReactDOM from 'react-dom';
 import ReactSwipe from 'react-swipe';
 
+import { ActivityIndicator, WingBlank, WhiteSpace, Button } from 'antd-mobile';
+
+
 class Home extends React.Component{
 	constructor(){
 		super();
@@ -13,19 +16,31 @@ class Home extends React.Component{
 			bannerList:[],
 			navList:[],
 			catgList:[],
-			mainList:[]
+			mainList:[],
+			isShow: true
 		}
+
+
 	}
 
 	render(){
+
+
 		return <div id="home">
+
+		{
+			this.state.isShow?<p id="loading" >loading...</p>
+			:null
+		}
+			
+
 			<div id="search">
-				<div className="left">
+				<div className="left" onClick={this.searchClick.bind(this)}>
 					<input type="text" placeholder="搜索商品 分类 功效"/>
 					<span><i className="iconfont icon-search"></i></span>
 				</div>
 				<div className="right">
-					<span><i className="iconfont icon-account"></i></span>
+					<span><i className="iconfont icon-category"></i></span>
 				</div>
 			</div>
 			<ul id="nav1">
@@ -106,10 +121,10 @@ class Home extends React.Component{
 
 
 			<ul id="footer">
-				<li><i className="iconfont icon-store"></i>首页</li>
-				<li><i className="iconfont icon-trade"></i>拼团</li>
-				<li><i className="iconfont icon-cart"></i>购物车</li>
-				<li><i className="iconfont icon-account"></i>我的</li>
+				<li><a href="/home"><i className="iconfont icon-store"></i>首页</a></li>
+				<li><a><i className="iconfont icon-trade"></i>拼团</a></li>
+				<li><a href="/shopcar"><i className="iconfont icon-cart"></i>购物车</a></li>
+				<li><a href="/login"><i className="iconfont icon-account"></i>我的</a></li>
 			</ul>
 			
 
@@ -117,12 +132,27 @@ class Home extends React.Component{
 		</div>
 	}
 
+	componentWillMount(){
+		//console.log(localStorage.getItem("userID").length)
+		if(localStorage.getItem("userID")?localStorage.getItem("userID").length:null){
+			console.log("已验证")
+		}else{
+			this.props.history.push("/login")
+		}
+
+	}
+
+
+
 	componentDidMount(){
+
+		// console.log(window.validate)
+		// console.log(window.validate?window.validate.length:null)
 		//banner
 		axios.get("/appapi/home/marketingBannerNewZone/v3?silo_code=3&timestamp=1522481061819&summary=484bc6bc8a7384fac7c142df59c0eac7").then(res=>{
 			// console.log(res.data);
 			this.setState({
-				bannerList:res.data.banners
+				bannerList:res.data.banners,
 			})
 		})
 		//navul
@@ -145,15 +175,43 @@ class Home extends React.Component{
 		axios.get("/appapi/silo/eventForH5?categoryId=cosmetics&pageIndex=1&timestamp=1522482652319&summary=655b11575275e4dabcd5b49bb2721b66&platform_code=H5").then(res=>{
 			// console.log(res.data.eventList);
 			this.setState({
-				mainList:res.data.eventList
+				mainList:res.data.eventList,
 			})
 		})
+
+		Promise.all([axios.get("/appapi/home/marketingBannerNewZone/v3?silo_code=3&timestamp=1522481061819&summary=484bc6bc8a7384fac7c142df59c0eac7"),axios.get("/appapi/cms/cmsDetail/v3?silo=2013000100000000003&ids=2041000100000000044,2042000100000000329,2120000100000000225&timestamp=1522481062043&summary=0ea14a3cb1dcdbd7cad431f38ed15860&platform_code=H5"),axios.get("/appapi/beauty/beautyChannelBrands/v3"),axios.get("/appapi/silo/eventForH5?categoryId=cosmetics&pageIndex=1&timestamp=1522482652319&summary=655b11575275e4dabcd5b49bb2721b66&platform_code=H5")]).then(res=>{
+			this.setState({
+				isShow:false
+			})
+		})
+
+
+		
+		var ul = document.getElementById('nav1');
+		window.onscroll = function(){
+			if(window.pageYOffset>ul.offsetTop){
+				ul.style.position = 'fixed';
+				ul.style.top='0px';
+				ul.style.zIndex = 2;
+			}else{
+				ul.style.position = '';
+
+			}
+		}
+
+
 	}
 
 	handleClick(id,key){
 		// console.log(id,key);
 		this.props.history.push(`/list/${id}`)
 	}
+
+	searchClick(){
+		this.props.history.push("/search")
+	}
+
+
 }
 
  export default Home ;
