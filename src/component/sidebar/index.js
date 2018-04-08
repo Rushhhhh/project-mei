@@ -14,6 +14,11 @@ class Sidebar extends React.Component{
 				<li>身体护肤</li>
 				<li>香水</li>
 				<li>美妆工具</li>
+				<li>面部护肤</li>
+				<li>彩妆</li>
+				<li>身体护肤</li>
+				<li>香水</li>
+				<li>美妆工具</li>
 			</ul>
 		</div>
 	}

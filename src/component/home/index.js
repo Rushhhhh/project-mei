@@ -7,6 +7,7 @@ import ReactSwipe from 'react-swipe';
 
 import { ActivityIndicator, WingBlank, WhiteSpace, Button } from 'antd-mobile';
 
+import store from "../../reducer/index.js";
 
 class Home extends React.Component{
 	constructor(){
@@ -40,7 +41,7 @@ class Home extends React.Component{
 					<span><i className="iconfont icon-search"></i></span>
 				</div>
 				<div className="right">
-					<span><i className="iconfont icon-category"></i></span>
+					<span onClick={this.changeClick.bind(this)}><i className="iconfont icon-category"></i></span>
 				</div>
 			</div>
 			<ul id="nav1">
@@ -209,6 +210,13 @@ class Home extends React.Component{
 
 	searchClick(){
 		this.props.history.push("/search")
+	}
+
+	changeClick(){
+		store.dispatch({
+			type:"CHANGE",
+			payload:this.state.isShow
+		})
 	}
 
 

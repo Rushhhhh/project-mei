@@ -16,7 +16,7 @@ router.post("/",function(req,res){
 	},function(error,info){
 		if(!error){
 			console.log(info);
-			res.send(info);
+			res.send();
 		}else{
 			console.log(error)
 		}
