@@ -13,7 +13,7 @@ class Login extends React.Component{
 			<div id="header">
 				<span><i className="iconfont icon-back"></i></span>
 				<span>登录</span>
-				<span><a href="/register">注册</a></span>
+				<span><a href="#/register">注册</a></span>
 			</div>
 			<p>使用手机登录</p>
 			<form>

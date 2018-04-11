@@ -12,7 +12,7 @@ class Register extends React.Component{
 			<div id="header">
 				<span><i className="iconfont icon-back"></i></span>
 				<span>注册</span>
-				<span><a href="/login">登录</a></span>
+				<span><a href="#/login">登录</a></span>
 			</div>
 			<p>使用手机登录</p>
 			<form>

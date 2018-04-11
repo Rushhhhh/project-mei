@@ -124,8 +124,8 @@ class Home extends React.Component{
 			<ul id="footer">
 				<li><a href="/home"><i className="iconfont icon-store"></i>首页</a></li>
 				<li><a><i className="iconfont icon-trade"></i>拼团</a></li>
-				<li><a href="/shopcar"><i className="iconfont icon-cart"></i>购物车</a></li>
-				<li><a href="/login"><i className="iconfont icon-account"></i>我的</a></li>
+				<li><a href="#/shopcar"><i className="iconfont icon-cart"></i>购物车</a></li>
+				<li><a href="#/login"><i className="iconfont icon-account"></i>我的</a></li>
 			</ul>
 			
 
